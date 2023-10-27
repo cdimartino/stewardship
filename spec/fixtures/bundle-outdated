@@ -1,0 +1,19 @@
+Gem                    Current  Latest   Requested  Groups
+addressable            2.8.4    2.8.5
+debug                  1.7.2    1.8.0    >= 0       development
+irb                    1.6.4    1.8.3
+lint_roller            1.0.0    1.1.0
+parser                 3.2.2.1  3.2.2.4
+public_suffix          5.0.1    5.0.3
+regexp_parser          2.8.0    2.8.2
+reline                 0.3.3    0.3.9
+rexml                  3.2.5    3.2.6
+rspec-mocks            3.12.5   3.12.6
+rspec-support          3.12.0   3.12.1
+rubocop                1.50.2   1.57.2   ~> 1.50    development
+rubocop-ast            1.28.0   1.30.0
+rubocop-performance    1.16.0   1.19.1
+standard               1.28.0   1.31.2   ~> 1.28    development
+standard-custom        1.0.0    1.0.2
+standard-performance   1.0.1    1.2.1
+unicode-display_width  2.4.2    2.5.0

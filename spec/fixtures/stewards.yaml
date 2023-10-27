@@ -1,0 +1,23 @@
+---
+
+- teams:
+  - ruby_platform:
+    - slack_channel: #ruby_platform
+      gems:
+        -
+- gem_name: my_gem
+  ownership:
+    - team: my_team
+      slack_channel: #my_team-gems
+    - team: another_team
+      slack_channel: #another_team-gems
+
+# Define the gem name
+gem_name: my_gem
+
+# Define the teams and Slack channels that should have ownership over the gem
+ownership:
+  - team: my_team
+    slack_channel: #my_team-gems
+  - team: another_team
+    slack_channel: #another_team-gems

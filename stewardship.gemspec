@@ -10,9 +10,7 @@ Gem::Specification.new do |spec|
   spec.description = "Notify a Slack channel, email address, etc when a gem receives a patch or release. Include details of the change."
   spec.homepage = "https://github.com/cdimartino/stewardship"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.7"
-
-  #spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+  spec.required_ruby_version = ">= 3.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
@@ -29,8 +27,8 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  # Uncomment to register a new dependency of your gem
   spec.add_dependency "bundler"
+  spec.add_dependency "memery"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
