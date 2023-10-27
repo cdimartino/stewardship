@@ -14,9 +14,9 @@ module Stewardship
       # Returns a hash representation of the parsed input.
       # The keys of the hash are the column names.
       #
-      # @example { gem: "gem_name", latest: "1.0.0", installed: "0.1.0", requested: ">= 0.1.0", groups: "default", homepage: "" }
+      # @example { gem: "gem_name", latest: "1.0.0", installed: "0.1.0", requested: ">= 0.1.0", groups: "default" }
       #
-      # @return [Hash] A hash representation of the parsed input.
+      # @return [Array] An array of hash representations of the parsed input.
       memoize def to_h
         data_rows.map do |row|
           column_reference.each_with_object({}) do |column, hash|
@@ -37,7 +37,7 @@ module Stewardship
               start + column_widths[index] - 1
             end
           {column_name:, start:, stop:}.tap do
-            start = start + column_widths[index]
+            start += column_widths[index]
           end
         end
       end

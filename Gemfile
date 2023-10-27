@@ -3,6 +3,13 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in stewardship.gemspec
 gemspec
 
-gem "rake", "~> 13.0"
-gem "rspec", "~> 3.0"
-gem "standard", "~> 1.3"
+group :development do
+  gem "rake"
+  gem "standard"
+end
+
+group :test do
+  gem "rspec"
+  gem "rspec-its"
+  gem "shoulda-matchers"
+end

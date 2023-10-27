@@ -9,17 +9,18 @@ module Stewardship
       # Initializes a new instance of GemInfo with the given gem name.
       #
       # @param gem_name [String] the name of the gem
-      def initialize(gem_name)
+      def initialize(gem_name, runner: Runner)
         @gem_name = gem_name
+        @runner = runner
       end
 
       # Returns a hash containing information about the gem.
       #
       # @return [Hash] a hash containing information about the gem
       memoize def info
-        Runner.info(gem_name).split("\n").map(&:strip).then do |rows|
+        @runner.info(gem_name).split("\n").map(&:strip).then do |rows|
           rows.map do |row|
-            row.split(/: /, 2)
+            row.split(": ", 2)
           end.keep_if { _1.length == 2 }.to_h
         end
       end
@@ -48,11 +49,6 @@ module Stewardship
       #
       # @return [String] the changelog of the gem
       memoize def changelog = info["Changelog"]
-
-      # Returns the version of the gem.
-      #
-      # @return [String] the version of the gem
-      memoize def version = info["Version"]
 
       # Returns the wiki of the gem.
       #
